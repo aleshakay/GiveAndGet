@@ -22,7 +22,7 @@ namespace GiveAndGet.DataAccess
             using (var db = new SqlConnection(connectionString))
             {
                 var parameters = new { UserId = userId };
-                var user = db.QueryFirst<User>(sql, parameters);
+                var user = db.QueryFirstOrDefault<User>(sql, parameters);
                 return user;
             }
         }
