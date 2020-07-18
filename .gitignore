@@ -30,3 +30,5 @@ src/helpers/apiKeys.json
 .vscode/
 GiveAndGet/obj/Debug/netcoreapp3.1/project.razor.json
 GiveAndGet/obj/Release/
+GiveAndGet/obj/Debug
+GiveAndGet/appsettings.json
