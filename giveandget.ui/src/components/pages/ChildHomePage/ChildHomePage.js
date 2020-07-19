@@ -10,6 +10,7 @@ class ChildHomePage extends React.Component {
   }
 
   
+  
 
   render() {
     const { user } = this.props;
