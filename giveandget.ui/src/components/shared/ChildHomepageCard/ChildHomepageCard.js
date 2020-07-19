@@ -9,6 +9,7 @@ import {
 import './ChildHomepageCard.scss';
 
 class ChildHomepageCard extends React.Component {
+  
   render() {
     const { user } = this.props;
     return (
