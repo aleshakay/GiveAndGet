@@ -7,7 +7,7 @@ class NavBar extends React.Component {
       <div className="MainContainer">
         <header>
           <div className="navbar" id="myNavBar">
-            <a href="#">Home</a>
+            <a href="/">HomePage</a>
             <a href="/chores">Chores</a>
             <a href="/rewards">Rewards</a>
             <a href="#Dashboard">Dashboard</a>

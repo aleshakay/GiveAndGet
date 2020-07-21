@@ -6,8 +6,9 @@ import {
   Switch,
 } from 'react-router-dom';
 import NavBar from '../components/shared/NavBar/NavBar';
-import Chores from '../components/pages/Chores/Chores';
+import Chores from '../components/pages/AvailableChores/AvailableChores';
 import HomePage from '../components/pages/HomePage/HomePage';
+import NewChore from '../components/pages/NewChore/NewChore';
 
 import './App.scss';
 
@@ -35,6 +36,7 @@ class App extends React.Component {
           <Switch>
             <PublicRoute path="/" exact component={HomePage} authed={authed}/>
             <PublicRoute path="/chores" exact component={Chores} authed={authed}/>
+            <PublicRoute path="/newChore" exact component={NewChore} authed={authed}/>
           </Switch>
         </Router>
       </div>
