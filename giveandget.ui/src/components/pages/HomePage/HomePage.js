@@ -7,7 +7,7 @@ import './HomePage.scss';
 
 class HomePage extends React.Component {
   state = {
-    userId: 1,
+    userId: 2,
     user: {},
   }
 
@@ -44,6 +44,7 @@ class HomePage extends React.Component {
       case 1:
         return this.renderFamilyHomePageByRole();
       case 2:
+        debugger
         return this.renderChildHomePageByRole();
       default: 
         return this.renderChildHomePageByRole();

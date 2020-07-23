@@ -1,11 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
 import {
   Card, 
   CardBody,
   Button,
   CardTitle,
 } from 'reactstrap';
+import { Link } from 'react-router-dom';
 import './ChildHomepageCard.scss';
 
 class ChildHomepageCard extends React.Component {
@@ -17,7 +18,7 @@ class ChildHomepageCard extends React.Component {
         <Card>
           <CardTitle>Welcome {user.firstName}</CardTitle>
           <CardBody>
-            <Button>Chores</Button>
+            <Button><Link to={`/chores`}>Chores</Link></Button>
             <Button>Rewards</Button>
           </CardBody>
         </Card>
