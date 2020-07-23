@@ -18,12 +18,10 @@ class SingleAvailChoreCard extends React.Component {
       <div className="SingleAvailChoreCard">
         <Card>
           <CardTitle>{singleChore.name}</CardTitle>
-          <CardText>{singleChore.picture}</CardText>
-          <CardBody>
-          <CardText>{singleChore.description}</CardText>
-          <CardText>{singleChore.value}</CardText>
+            <CardText>{singleChore.picture}</CardText>
+            <CardText>{singleChore.description}</CardText>
+            <CardText>{singleChore.value}</CardText>
             <Button><Link to ={`/chore/${singleChore.choreId}`}>Choose</Link></Button>
-          </CardBody>
         </Card>
 
       </div>
