@@ -22,12 +22,12 @@ namespace GiveAndGet.Controllers
 
         //api/Chore/
         [HttpGet]
-        public IActionResult GetAllChores()
+        public IActionResult GetAllAvailableChores()
         {
-            var allChores = _choreRepository.GetAllChores();
-            var noChores = !allChores.Any();
+            var allAvailableChores = _choreRepository.GetAllAvailableChores();
+            var noChores = !allAvailableChores.Any();
             if (noChores) return NotFound("There are no chores at this time");
-            return Ok(allChores);
+            return Ok(allAvailableChores);
         }
 
         //api/Chore/
@@ -37,5 +37,20 @@ namespace GiveAndGet.Controllers
             var newChore = _choreRepository.AddNewChore(choreToAdd);
             return Created("", newChore);
         }
+
+        // api/Chore/1
+        [HttpGet("{choreId}")]
+        public IActionResult GetChoreById(int choreId)
+        {
+            var singleChore = _choreRepository.GetChoreById(choreId);
+            if (singleChore != null)
+            {
+                return Ok(singleChore);
+            }
+            else return NotFound("That Chore does not exist.");
+        }
+
+
+
     }
 }

@@ -5,7 +5,7 @@ import AllAvailableChoreButtons from '../../shared/AllAvailableChoreButtons/AllA
 
 class AvailableChores extends React.Component {
   state = {
-    chores: []
+    chores: [],
   }
 
   getAllChores = () => {
@@ -23,7 +23,7 @@ class AvailableChores extends React.Component {
   render() {
     return (
       <div>
-        <h1>Chores</h1>
+        <h1>All Chores</h1>
         {this.state.chores.map((chore) => (<AllAvailableChoreButtons key={chore.choreId} chore={chore} />))}
       </div>
     );

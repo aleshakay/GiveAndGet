@@ -17,22 +17,33 @@ namespace GiveAndGet.DataAccess
             connectionString = config.GetConnectionString("GiveAndGet");
         }
 
-        public IEnumerable<Chore> GetAllChores()
-        {
+
+        public IEnumerable<Chore> GetAllAvailableChores()
+        { 
             using (var db = new SqlConnection(connectionString))
             {
-                return db.Query<Chore>("select * from [Chore]");
+                return db.Query<Chore>("Select * from [Chore] where ChoreCompleted = 'false'");
             }
-        } 
+        }
 
         public Chore AddNewChore(Chore choreToAdd)
         {
             var sql = @"INSERT INTO [Chore] (Name, EnteredDate, Picture, ChoreValue, ChoreCompleted, ChoreDescription, ChoreApproved )
-                      output inserted.*
-                      values(@Name, @EnteredDate, @Picture, @ChoreValue, @ChoreCompleted, @ChoreDescription, @ChoreApproved)";
+                      values(@Name, @EnteredDate, @Picture, @ChoreValue, 'false', @ChoreDescription, 'false')";
             using (var db = new SqlConnection(connectionString))
             {
                 var result = db.QueryFirstOrDefault<Chore>(sql, choreToAdd);
+                return result;
+            }
+        }
+
+        public Chore GetChoreById(int choreId)
+        {
+            var sql = @"Select * from [Chore] where ChoreId = @ChoreId;";
+            using (var db = new SqlConnection(connectionString))
+            {
+                var parameters = new { ChoreId = choreId };
+                var result = db.QueryFirstOrDefault<Chore>(sql, parameters);
                 return result;
             }
         }
