@@ -11,6 +11,7 @@ import HomePage from '../components/pages/HomePage/HomePage';
 import NewChore from '../components/pages/NewChore/NewChore';
 import PendingChores from '../components/pages/PendingChores/PendingChores'
 import SingleAvailChore from '../components/pages/SingleAvailChore/SingleAvailChore';
+import SinglePendingChore from '../components/pages/SinglePendingChore/SinglePendingChore';
 
 import './App.scss';
 
@@ -39,8 +40,9 @@ class App extends React.Component {
             <PublicRoute path="/" exact component={HomePage} authed={authed}/>
             <PublicRoute path="/chores" exact component={Chores} authed={authed}/>
             <PublicRoute path="/chore/:choreId" exact component={SingleAvailChore} authed={authed}/>
+            <PublicRoute path="/finishedChore/:choreId" exact component={SinglePendingChore} authed={authed}/>
             <PublicRoute path="/newChore" exact component={NewChore} authed={authed}/>
-           // <PublicRoute path="/pendingChores" exact component={PendingChores} authed={authed}/>
+           <PublicRoute path="/pendingChores" exact component={PendingChores} authed={authed}/>
           </Switch>
         </Router>
       </div>

@@ -9,7 +9,7 @@ class PendingChoreButtons extends React.Component {
     const {pendingChore} = this.props;
     return (
       <div>
-        <Button><Link to ={`/pendingChores/${pendingChore.pendingChoreId}`}>{pendingChore.name}</Link></Button>
+        <Button><Link to ={`/finshedChore/${pendingChore.choreId}`}>{pendingChore.name}</Link></Button>
       </div>
     );
   }

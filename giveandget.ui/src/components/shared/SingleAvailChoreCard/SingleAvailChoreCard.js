@@ -8,7 +8,9 @@ import {
   CardText,
   CardImg,
 } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router';
+
+
 import choreData from '../../../helpers/data/choreData';
 
 import './SingleAvailChoreCard.scss';
@@ -20,7 +22,8 @@ class SingleAvailChoreCard extends React.Component {
     const userId = sessionStorage.getItem('userId');
     choreData.updateChoreUserId(singleChore.choreId, userId)
       .then((response) => this.setState({ singleChore: response }))
-      .catch((err) => console.error('error in single available chore card', err));
+      .catch((err) => console.error('error in single available chore card', err))
+      .then(() => this.props.history.push('/'));
   }
 
   render() {
@@ -28,11 +31,11 @@ class SingleAvailChoreCard extends React.Component {
     return (
       <div className="SingleAvailChoreCard">
         <Card>
-          <CardTitle>{singleChore.name}</CardTitle>
+          <CardTitle>Chore Name: {singleChore.name}</CardTitle>
             <CardText>{singleChore.picture}</CardText>
-            <CardText>{singleChore.description}</CardText>
-            <CardText>{singleChore.value}</CardText>
-            <Button><Link to ={`/chore/${singleChore.choreId}`} onClick={this.chooseChore}>Choose</Link></Button>
+            <CardText>Chore Description: {singleChore.choreDescription}</CardText>
+            <CardText>Chore Value: {singleChore.choreValue}</CardText>
+            <Button onClick={this.chooseChore}>Choose</Button>
         </Card>
 
       </div>
@@ -40,4 +43,4 @@ class SingleAvailChoreCard extends React.Component {
   }
 }
 
-export default SingleAvailChoreCard;
+export default withRouter (SingleAvailChoreCard);
