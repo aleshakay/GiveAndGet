@@ -50,6 +50,18 @@ namespace GiveAndGet.Controllers
             else return NotFound("That Chore does not exist.");
         }
 
+        // api/Chore/2/user/1
+        [HttpPut("{choreId}/user/{userId}")]
+        public IActionResult UpdateChore(int choreId, int userId)
+        {
+            var choreExist = _choreRepository.GetChoreById(choreId);
+            if (choreExist != null)
+            {
+                var upDateChore = _choreRepository.UpdateUserIdOnChore(choreId, userId);
+                return Ok("Updated UserId On Chore");
+            }
+            else return NotFound("Please Find Another Chore");
+        }
 
 
     }

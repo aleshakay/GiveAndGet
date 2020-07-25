@@ -47,5 +47,21 @@ namespace GiveAndGet.DataAccess
                 return result;
             }
         }
+
+        public Chore UpdateUserIdOnChore(int choreId, int userId)
+        {
+            var sql = @"
+                        UPDATE[Chore]
+                        Set UserId = @UserId
+                        Where ChoreId = @ChoreId;
+                        ";
+
+            using (var db = new SqlConnection(connectionString))
+            {
+                var parameters = new { UserId = userId, ChoreId = choreId };
+                var result = db.QueryFirstOrDefault<Chore>(sql, parameters);
+                return result;
+            }
+        }
     }
 }
