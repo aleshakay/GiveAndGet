@@ -1,31 +1,29 @@
 import React from 'react';
 import choreData from '../../../helpers/data/choreData';
-
-import AllAvailableChoreButtons from '../../shared/AllAvailableChoreButtons/AllAvailableChoreButtons';
+import PendingChoreButtons from '../../shared/PendingChoreButtons/PendingChoreButtons';
 import './PendingChores.scss';
 
 class PendingChores extends React.Component {
   state = {
-    chores: [],
+    pendingChores: [],
   }
 
   getAllPending = () => {
-    choreData.getChores()
-      .then((chores) =>{
-        this.setState({ chores });
-      })
-      .catch((err) => console.error(err));
+    const userId = sessionStorage.getItem('userId');
+    choreData.getAllChoresByUserId(userId)
+      .then((response) => this.setState({ pendingChores: response }))
+      .catch((err) => console.error('error in get pendingChore', err));
   }
 
   componentDidMount(){
-    this.getAllChores();
+    this.getAllPending();
   }
 
   render() {
     return (
       <div>
-        <h1>All Chores</h1>
-        {this.state.chores.map((chore) => (<AllAvailableChoreButtons key={chore.choreId} chore={chore} />))}
+        <h1>Pending Chores</h1>
+        {this.state.pendingChores.map((pendingChore) => (<PendingChoreButtons key={pendingChore.pendingChoreId} pendingChore={pendingChore} />))}
       </div>
     );
   }

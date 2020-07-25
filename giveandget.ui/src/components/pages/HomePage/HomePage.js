@@ -16,6 +16,7 @@ class HomePage extends React.Component {
     userData.getUserById(userId)
       .then((user) => {
         this.setState({ user });
+        sessionStorage.setItem('userId', userId);
       })
       .catch((err) => console.error('error from get user', err));
   }
@@ -44,7 +45,6 @@ class HomePage extends React.Component {
       case 1:
         return this.renderFamilyHomePageByRole();
       case 2:
-        debugger
         return this.renderChildHomePageByRole();
       default: 
         return this.renderChildHomePageByRole();

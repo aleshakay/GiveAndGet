@@ -15,10 +15,10 @@ import './SingleAvailChoreCard.scss';
 
 class SingleAvailChoreCard extends React.Component {
   chooseChore = (e) => {
-    debugger
     e.preventDefault();
     const { singleChore } = this.props;
-    choreData.updateChoreUserId(singleChore.choreId, singleChore.userId)
+    const userId = sessionStorage.getItem('userId');
+    choreData.updateChoreUserId(singleChore.choreId, userId)
       .then((response) => this.setState({ singleChore: response }))
       .catch((err) => console.error('error in single available chore card', err));
   }

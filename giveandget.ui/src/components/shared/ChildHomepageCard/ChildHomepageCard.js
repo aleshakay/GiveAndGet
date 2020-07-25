@@ -1,5 +1,4 @@
 import React from 'react';
-
 import {
   Card, 
   CardBody,
@@ -19,6 +18,7 @@ class ChildHomepageCard extends React.Component {
           <CardTitle>Welcome {user.firstName}</CardTitle>
           <CardBody>
             <Button><Link to={`/chores`}>Chores</Link></Button>
+            <Button><Link to={`/pendingChores`}>PendingChores</Link></Button>
             <Button>Rewards</Button>
           </CardBody>
         </Card>
