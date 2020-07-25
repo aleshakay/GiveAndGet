@@ -19,12 +19,13 @@ const getChoreById = (singleChoreId) => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
-
 const addChore = (choreObj) => axios.post(`${baseUrl}/Chore`, choreObj);
 
+const updateChoreUserId = (choreId, userId) => axios.put(`${baseUrl}/Chore/${choreId}/user/${userId}`)
 
 export default {
   getChores,
   addChore,
-  getChoreById
+  getChoreById,
+  updateChoreUserId
 };

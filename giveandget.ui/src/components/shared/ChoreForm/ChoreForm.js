@@ -34,7 +34,6 @@ class ChoreForm extends React.Component {
 
   saveChoreForm = (e) => {
     e.preventDefault();
-    debugger
     const choreObj =  {
       name: this.state.name,
       enteredDate: getCurrentDate("-"),
