@@ -2,14 +2,14 @@ import React from 'react';
 import choreData from '../../../helpers/data/choreData';
 
 import AllAvailableChoreButtons from '../../shared/AllAvailableChoreButtons/AllAvailableChoreButtons';
-import './AvailableChores.scss';
+import './PendingChores.scss';
 
-class AvailableChores extends React.Component {
+class PendingChores extends React.Component {
   state = {
     chores: [],
   }
 
-  getAllChores = () => {
+  getAllPending = () => {
     choreData.getChores()
       .then((chores) =>{
         this.setState({ chores });
@@ -31,4 +31,4 @@ class AvailableChores extends React.Component {
   }
 }
 
-export default AvailableChores;
+export default PendingChores;

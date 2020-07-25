@@ -6,6 +6,7 @@ using GiveAndGet.DataAccess;
 using GiveAndGet.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace GiveAndGet.Controllers
 {
@@ -63,6 +64,31 @@ namespace GiveAndGet.Controllers
             else return NotFound("Please Find Another Chore");
         }
 
+        // api/Chore/user/2
+        [HttpGet("user/{userId}")]
+        public IActionResult GetAllChoresByUserId(int userId)
+        {
+     
+            var choreStatusById = _choreRepository.GetAllNonCompletedOrdersByUserId(userId);
+            if (choreStatusById != null) 
+            { 
+                return Ok(choreStatusById);
+            }
+            else return NotFound("Unable to updated Status");
+        }
+
+        // api/Chore/2
+        [HttpPut("{choreId}")]
+        public IActionResult CompleteChore(int choreId)
+        {
+            var choreExist = _choreRepository.GetChoreById(choreId);
+            if (choreExist != null)
+            {
+                var choreToBeCompleted = _choreRepository.UpdateCompleteStatusOnChore(choreId);
+                return Ok("Updated CompletedStatus On Chore");
+            }
+            else return NotFound("Unable to make chore Completed");
+        }
 
     }
 }

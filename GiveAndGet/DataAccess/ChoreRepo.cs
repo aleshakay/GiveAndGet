@@ -63,5 +63,37 @@ namespace GiveAndGet.DataAccess
                 return result;
             }
         }
+
+        public IEnumerable<Chore> GetAllNonCompletedOrdersByUserId(int userId)
+        {
+            var sql = @"SELECT *
+                        FROM [Chore]
+                        WHERE UserId = @UserId
+                        AND ChoreCompleted = false;";
+
+            using (var db = new SqlConnection(connectionString))
+            {
+                var parameters = new { UserId = userId };
+                var result = db.Query<Chore>(sql, parameters);
+                return result;
+            }
+        }
+
+        public Chore UpdateCompleteStatusOnChore(int choreId)
+        {
+            var sql = @"
+                        UPDATE[Chore]
+                        Set ChoreCompleted = 1
+                        Where ChoreId = @ChoreId;
+                        And UserId IS NOT NULL;
+                        ";
+
+            using (var db = new SqlConnection(connectionString))
+            {
+                var parameters = new { ChoreId = choreId };
+                var result = db.QueryFirstOrDefault<Chore>(sql, parameters);
+                return result;
+            }
+        }
     }
 }
