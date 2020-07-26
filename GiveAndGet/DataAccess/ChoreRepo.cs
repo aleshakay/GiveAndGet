@@ -69,7 +69,7 @@ namespace GiveAndGet.DataAccess
             var sql = @"SELECT *
                         FROM [Chore]
                         WHERE UserId = @UserId
-                        AND ChoreCompleted = false;";
+                        AND ChoreCompleted = 'false';";
 
             using (var db = new SqlConnection(connectionString))
             {

@@ -7,7 +7,7 @@ import './HomePage.scss';
 
 class HomePage extends React.Component {
   state = {
-    userId: 2,
+    userId: 1,
     user: {},
   }
 

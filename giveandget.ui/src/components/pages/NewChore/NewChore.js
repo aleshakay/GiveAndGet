@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ChoreForm from '../../shared/ChoreForm/ChoreForm';
 
 import './NewChore.scss';
-import ChoreForm from '../../shared/ChoreForm/ChoreForm';
 
 class NewChore extends React.Component {
   static propTypes = {
@@ -14,7 +14,7 @@ class NewChore extends React.Component {
   render() {
     return (
       <div>
-        < ChoreForm />
+        <ChoreForm />
       </div>
     );
   }
