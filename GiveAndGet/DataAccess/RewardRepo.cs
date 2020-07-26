@@ -28,7 +28,14 @@ namespace GiveAndGet.DataAccess
                 var results = db.QueryFirstOrDefault<Reward>(sql, rewardToAdd);
                 return results;
             }
+        }
 
+        public List<Reward> GetAllRewards()
+        {
+            using (var db = new SqlConnection(connectionString))
+            {
+                return db.Query<Reward>("select * from reward").ToList();
+            }
         }
     }
 }
