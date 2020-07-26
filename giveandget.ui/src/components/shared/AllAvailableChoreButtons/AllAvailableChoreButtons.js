@@ -4,9 +4,6 @@ import { Link } from 'react-router-dom';
 
 
 class AllAvailableChoreButtons extends React.Component {
-
-
-
   render() {
     const {chore} = this.props;
     return (

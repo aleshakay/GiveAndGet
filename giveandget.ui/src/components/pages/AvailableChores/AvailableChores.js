@@ -1,7 +1,8 @@
 import React from 'react';
 import choreData from '../../../helpers/data/choreData';
-import './AvailableChores.scss';
+
 import AllAvailableChoreButtons from '../../shared/AllAvailableChoreButtons/AllAvailableChoreButtons';
+import './AvailableChores.scss';
 
 class AvailableChores extends React.Component {
   state = {

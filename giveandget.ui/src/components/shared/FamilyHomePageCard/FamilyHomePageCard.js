@@ -22,7 +22,7 @@ class FamilyHomepageCard extends React.Component {
             <ButtonGroup vertical className="familyHomeButtons" >
               <Button>Family</Button>
               <Button><Link to={`/newChore`}>Chores</Link></Button>
-              <Button>Rewards</Button>
+              <Button><Link to={`/newReward`}>Rewards</Link></Button>
             </ButtonGroup>
           </CardBody>
         </Card>
