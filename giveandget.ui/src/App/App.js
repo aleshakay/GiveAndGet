@@ -13,6 +13,7 @@ import PendingChores from '../components/pages/PendingChores/PendingChores'
 import SingleAvailChore from '../components/pages/SingleAvailChore/SingleAvailChore';
 import SinglePendingChore from '../components/pages/SinglePendingChore/SinglePendingChore';
 import NewReward from '../components/pages/NewReward/NewReward';
+import AllReward from '../components/pages/AllRewards/AllRewards';
 import './App.scss';
 
 const PublicRoute = ({ component: Component, authed, ...rest }) => {
@@ -43,7 +44,9 @@ class App extends React.Component {
             <PublicRoute path="/finishedChore/:choreId" exact component={SinglePendingChore} authed={authed}/>
             <PublicRoute path="/newChore" exact component={NewChore} authed={authed}/>
             <PublicRoute path="/newReward"  exact component={NewReward} authed={authed}/>
-           <PublicRoute path="/pendingChores" exact component={PendingChores} authed={authed}/>
+            <PublicRoute path="/pendingChores" exact component={PendingChores} authed={authed}/>
+            <PublicRoute path="/rewards"  exact component={AllReward} authed={authed}/>
+
           </Switch>
         </Router>
       </div>

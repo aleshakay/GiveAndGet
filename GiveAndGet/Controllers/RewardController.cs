@@ -26,5 +26,14 @@ namespace GiveAndGet.Controllers
             var newReward = _rewardRepository.AddNewReward(rewardToAdd);
             return Created("", newReward);
         }
+
+        // api/Reward/
+        [HttpGet]
+        public IActionResult GetAllRewards()
+        {
+            var allRewards = _rewardRepository.GetAllRewards();
+            if (allRewards != null) return Ok(allRewards);
+            return NotFound("There are not any rewards");
+        }
     }
 }
