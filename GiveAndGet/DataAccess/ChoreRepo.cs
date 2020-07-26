@@ -84,7 +84,7 @@ namespace GiveAndGet.DataAccess
             var sql = @"
                         UPDATE[Chore]
                         Set ChoreCompleted = 1
-                        Where ChoreId = @ChoreId;
+                        Where ChoreId = @ChoreId
                         And UserId IS NOT NULL;
                         ";
 

@@ -24,7 +24,7 @@ class PendingChoreCard extends React.Component {
 
   render() {
     const { pendingChore } = this.props;
-    debugger
+    console.log("pending card details of card w/finished btn", pendingChore)
     return (
       <div className="PendingChoreCard">
         <Card>

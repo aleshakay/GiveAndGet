@@ -8,22 +8,25 @@ class SinglePendingChore extends React.Component {
     pendingChore : {},
   }
 
-  getSinglePendingChoreById = (pendingChoreId) => {
-    choreData.getAllChoresByUserId(pendingChoreId)
-      .then((response) => this.setState({ pendingChore: response }))
-      .catch((err) => console.error('error in get pendingChore', err));
-  }
+ 
 
   componentDidMount() {
-    const pendingChoreId = this.props.match.params.choreId;
-    this.getSinglePendingChoreById(pendingChoreId);
+    const pendingChoreId = this.props.match.params.pendingChoreId;
+    choreData.getChoreById(pendingChoreId)
+      .then((response) => {
+        debugger
+        this.setState({ pendingChore: response })
+        console.log(this.state.pendingChore)
+    })
+      .catch((err) => console.error('error in get pendingChore', err));
   }
 
   render() {
     const { pendingChore } = this.state;
+    console.log(pendingChore, "in single pending chore.js")
     return (
       <div>
-       <PendingChoreCard  pendingChore={pendingChore} />
+       <PendingChoreCard pendingChore={pendingChore} />
       </div>
     );
   }

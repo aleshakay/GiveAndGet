@@ -25,7 +25,7 @@ const getAllChoresByUserId = (userId) => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
-const finishedChore = (choreId) => axios.post(`${baseUrl}/Chore/${choreId}`);
+const finishedChore = (choreId) => axios.put(`${baseUrl}/Chore/${choreId}`);
 
 const addChore = (choreObj) => axios.post(`${baseUrl}/Chore`, choreObj);
 
