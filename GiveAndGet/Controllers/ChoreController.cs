@@ -90,5 +90,16 @@ namespace GiveAndGet.Controllers
             else return NotFound("Unable to make chore Completed");
         }
 
+        // api/Chore/user/2
+        [HttpGet("user{userId}")]
+        public IActionResult GetChoreByUserId(int userId)
+        {
+            var choresByUser = _choreRepository.GetChoreByUserId(userId);
+            if (choresByUser != null)
+            {
+                return Ok(choresByUser);
+            }
+            else return NotFound("That User does not have any chores.");
+        }
     }
 }

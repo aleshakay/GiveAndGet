@@ -95,5 +95,18 @@ namespace GiveAndGet.DataAccess
                 return result;
             }
         }
+
+        public IEnumerable<Chore> GetChoreByUserId(int userId)
+        {
+            var sql = @"SELECT *
+                      FROM [Chore]
+                      Where UserId = @UserId;";
+            using (var db = new SqlConnection(connectionString))
+            {
+                var parameters = new { UserId = userId };
+                var result = db.Query<Chore>(sql, parameters);
+                return result;
+            }
+        }
     }
 }
