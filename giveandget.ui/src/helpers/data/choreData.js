@@ -31,11 +31,18 @@ const addChore = (choreObj) => axios.post(`${baseUrl}/Chore`, choreObj);
 
 const updateChoreUserId = (choreId, userId) => axios.put(`${baseUrl}/Chore/${choreId}/user/${userId}`)
 
+const GetCompletedChoresByUserId = (userId) => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/Chore/user/${userId}/completed`)
+    .then((result) => resolve(result.data))
+    .catch((err) => reject(err));
+});
+
 export default {
   getChores,
   addChore,
   getChoreById,
   updateChoreUserId,
   getAllChoresByUserId,
-  finishedChore
+  finishedChore,
+  GetCompletedChoresByUserId
 };

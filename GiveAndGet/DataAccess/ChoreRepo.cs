@@ -96,11 +96,13 @@ namespace GiveAndGet.DataAccess
             }
         }
 
-        public IEnumerable<Chore> GetChoreByUserId(int userId)
+        public IEnumerable<Chore> GetCompletedChoresByUserId(int userId)
         {
-            var sql = @"SELECT *
-                      FROM [Chore]
-                      Where UserId = @UserId;";
+            var sql = @"SELECT Chore.*
+                        FROM [Chore], [User]
+                        WHERE Chore.UserId = [User].UserId
+                        AND Chore.UserId = @UserId
+                        AND Chore.ChoreCompleted = 'true';";
             using (var db = new SqlConnection(connectionString))
             {
                 var parameters = new { UserId = userId };
