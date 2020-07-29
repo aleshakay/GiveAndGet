@@ -95,5 +95,21 @@ namespace GiveAndGet.DataAccess
                 return result;
             }
         }
+
+        public IEnumerable<Chore> GetCompletedChoresByUserId(int userId)
+        {
+            var sql = @"SELECT *
+                        FROM [Chore]              
+                        WHERE Chore.UserId = @UserId
+                        AND Chore.ChoreCompleted = 'true'
+                        AND Chore.ChoreApproved = 'true';";
+
+            using (var db = new SqlConnection(connectionString))
+            {
+                var parameters = new { UserId = userId };
+                var result = db.Query<Chore>(sql, parameters);
+                return result;
+            }
+        }
     }
 }

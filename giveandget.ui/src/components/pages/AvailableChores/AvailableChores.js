@@ -11,7 +11,7 @@ class AvailableChores extends React.Component {
 
   getAllChores = () => {
     choreData.getChores()
-      .then((chores) =>{
+      .then((chores) => {
         this.setState({ chores });
       })
       .catch((err) => console.error(err));

@@ -14,7 +14,11 @@ import SingleAvailChore from '../components/pages/SingleAvailChore/SingleAvailCh
 import SinglePendingChore from '../components/pages/SinglePendingChore/SinglePendingChore';
 import NewReward from '../components/pages/NewReward/NewReward';
 import AllReward from '../components/pages/AllRewards/AllRewards';
+import Dashboard from '../components/pages/FamilyDashboard/FamilyDashboard';
 import './App.scss';
+import UserCircles from '../components/shared/UserCircles/UserCircles';
+import AllAvailableChoreButtons from '../components/shared/AllAvailableChoreButtons/AllAvailableChoreButtons';
+import CompletedChoreButtons from '../components/shared/CompletedChoreButtons/CompletedChoreButtons';
 
 const PublicRoute = ({ component: Component, authed, ...rest }) => {
   const routeChecker = (props) => (authed === false ? <Component {...props} {...rest}/> : <Redirect to={{ pathname: '/', state: { from: props.location } }} />);
@@ -38,15 +42,16 @@ class App extends React.Component {
         <Router>
           <NavBar authed={authed}/>
           <Switch>
-            <PublicRoute path="/" exact component={HomePage} authed={authed}/>
-            <PublicRoute path="/chores" exact component={Chores} authed={authed}/>
-            <PublicRoute path="/chore/:choreId" exact component={SingleAvailChore} authed={authed}/>
-            <PublicRoute path="/finishedChore/:pendingChoreId" exact component={SinglePendingChore} authed={authed}/>
-            <PublicRoute path="/newChore" exact component={NewChore} authed={authed}/>
-            <PublicRoute path="/newReward"  exact component={NewReward} authed={authed}/>
-            <PublicRoute path="/pendingChores" exact component={PendingChores} authed={authed}/>
-            <PublicRoute path="/rewards"  exact component={AllReward} authed={authed}/>
-
+            <PublicRoute path="/" exact component={HomePage} authed={authed} />
+            <PublicRoute path="/chores" exact component={Chores} authed={authed} />
+            <PublicRoute path="/chore/:choreId" exact component={SingleAvailChore} authed={authed} />
+            <PublicRoute path="/finishedChore/:pendingChoreId" exact component={SinglePendingChore} authed={authed} />
+            <PublicRoute path="/newChore" exact component={NewChore} authed={authed} />
+            <PublicRoute path="/newReward"  exact component={NewReward} authed={authed} />
+            <PublicRoute path="/pendingChores" exact component={PendingChores} authed={authed} />
+            <PublicRoute path="/rewards"  exact component={AllReward} authed={authed} />
+            <PublicRoute path="/dashboard" exact component={Dashboard} authed={authed} />
+            <PublicRoute path="/allcompleted:allCompletedChoreId" exact component={CompletedChoreButtons} authed={authed} />
           </Switch>
         </Router>
       </div>
