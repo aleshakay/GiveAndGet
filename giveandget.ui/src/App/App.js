@@ -16,6 +16,9 @@ import NewReward from '../components/pages/NewReward/NewReward';
 import AllReward from '../components/pages/AllRewards/AllRewards';
 import Dashboard from '../components/pages/FamilyDashboard/FamilyDashboard';
 import './App.scss';
+import UserCircles from '../components/shared/UserCircles/UserCircles';
+import AllAvailableChoreButtons from '../components/shared/AllAvailableChoreButtons/AllAvailableChoreButtons';
+import CompletedChoreButtons from '../components/shared/CompletedChoreButtons/CompletedChoreButtons';
 
 const PublicRoute = ({ component: Component, authed, ...rest }) => {
   const routeChecker = (props) => (authed === false ? <Component {...props} {...rest}/> : <Redirect to={{ pathname: '/', state: { from: props.location } }} />);
@@ -48,6 +51,7 @@ class App extends React.Component {
             <PublicRoute path="/pendingChores" exact component={PendingChores} authed={authed} />
             <PublicRoute path="/rewards"  exact component={AllReward} authed={authed} />
             <PublicRoute path="/dashboard" exact component={Dashboard} authed={authed} />
+            <PublicRoute path="/allcompleted:allCompletedChoreId" exact component={CompletedChoreButtons} authed={authed} />
           </Switch>
         </Router>
       </div>

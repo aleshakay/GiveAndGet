@@ -30,5 +30,17 @@ namespace GiveAndGet.Controllers
             return Ok(singleUserId);
 
         }
+
+        // api/User/2/completed
+        [HttpGet("{userId}/completed")]
+        public IActionResult GetFirstNameforCompletedChores(int userId)
+        {
+            var allNamesofCompletedChoresByFamily = _userRepository.GetUserNamesByUserId(userId);
+            if (allNamesofCompletedChoresByFamily != null)
+            {
+                return Ok(allNamesofCompletedChoresByFamily);
+            }
+            else return NotFound("That User does not have any chores.");
+        }
     }
 }
