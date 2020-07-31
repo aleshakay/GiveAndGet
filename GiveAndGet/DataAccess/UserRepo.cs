@@ -45,5 +45,21 @@ namespace GiveAndGet.DataAccess
                 return result;
             }
         }
+        public bool UpdateChorePointsOnUserId(int userId, int choreRewardPoint)
+        {
+            var sql = @"UPDATE [User]
+                        set ChoreRewardPoint = ChoreRewardPoint + @ChoreRewardPoint
+                        where UserId = @UserId;
+                        ";
+            using (var db = new SqlConnection(connectionString))
+            {
+                var parameters = new { 
+                    UserId = userId,
+                    ChoreRewardPoint = choreRewardPoint,
+                };
+                var result = db.Execute(sql, parameters);
+                return result > 0;
+            }
+        }
     }
 }

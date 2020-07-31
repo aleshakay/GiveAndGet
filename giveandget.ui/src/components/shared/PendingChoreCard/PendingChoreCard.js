@@ -22,8 +22,21 @@ class PendingChoreCard extends React.Component {
       .then(() => this.props.history.push('/'));
   }
 
+  approveAndPoints = (e) => {
+    this.props.history.push('/');
+    //wip
+  }
+
+
   render() {
     const { pendingChore } = this.props;
+    const choreApproveOrComplete = this.props.pendingChore.completed
+    let checkCompleteAndApproving;
+    if (choreApproveOrComplete === true) {
+      checkCompleteAndApproving = <Button onClick = {this.approveAndCloseMe}> Reward Points </Button> 
+    } else {
+      checkCompleteAndApproving = <Button onClick={this.choreFinished}>Mark Complete</Button>
+    }
     return (
       <div className="PendingChoreCard">
         <Card>
@@ -31,7 +44,7 @@ class PendingChoreCard extends React.Component {
             <CardText>{pendingChore.picture}</CardText>
             <CardText>{pendingChore.choreDescription}</CardText>
             <CardText>{pendingChore.choreValue}</CardText>
-            <Button onClick={this.choreFinished}>Finshed</Button>
+            {checkCompleteAndApproving}
         </Card>
 
       </div>

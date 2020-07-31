@@ -1,16 +1,10 @@
 import React from 'react';
-
-import choreData from '../../../helpers/data/choreData';
-import { Link } from 'react-router-dom';
 import './UserCircles.scss'
-import CompletedChoreButtons from '../CompletedChoreButtons/CompletedChoreButtons';
 
 class UserCircles extends React.Component {
   state = {
     allCompletedChores: [],
   }
-
-
 
   handleClick= (e) => {
     e.preventDefault();
@@ -18,7 +12,7 @@ class UserCircles extends React.Component {
   }
 
   render() {
-    const { allFamilyName, getSingleCompletedTaskByUID } = this.props;
+    const { allFamilyName } = this.props;
     return (
       <div>
         <button id ={`${allFamilyName.userId}`} className= 'button button5' onClick={this.handleClick} >{allFamilyName.firstName}</button>

@@ -37,6 +37,14 @@ const GetCompletedChoresByUserId = (userId) => new Promise((resolve, reject) => 
     .catch((err) => reject(err));
 });
 
+const GetPendingChoresByFamily = (userId) => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/Chore/familypendingapproval/${userId}`)
+    .then((result) => resolve(result.data))
+    .catch((err) => reject(err));
+});
+
+const updateApprovalAndPoints = (choreId, choreRewardPoint, userId) => axios.put(`${baseUrl}/Chore/approved/${choreId}/chorerewardpoint/${choreRewardPoint}/user/${userId}`);
+
 export default {
   getChores,
   addChore,
@@ -44,5 +52,7 @@ export default {
   updateChoreUserId,
   getAllChoresByUserId,
   finishedChore,
-  GetCompletedChoresByUserId
+  GetCompletedChoresByUserId,
+  GetPendingChoresByFamily,
+  updateApprovalAndPoints
 };

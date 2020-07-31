@@ -14,9 +14,7 @@ class SinglePendingChore extends React.Component {
     const pendingChoreId = this.props.match.params.pendingChoreId;
     choreData.getChoreById(pendingChoreId)
       .then((response) => {
-        debugger
         this.setState({ pendingChore: response })
-        console.log(this.state.pendingChore)
     })
       .catch((err) => console.error('error in get pendingChore', err));
   }

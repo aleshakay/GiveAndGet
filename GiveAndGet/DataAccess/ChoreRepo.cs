@@ -111,5 +111,38 @@ namespace GiveAndGet.DataAccess
                 return result;
             }
         }
+
+        public IEnumerable<Chore> GetAllFamiliesPendingChores(int userId)
+        {
+            var sql = @"SELECT chore.*, [User].FirstName
+                        FROM[Chore]
+                        JOIN[User]
+                        On[Chore].UserId = [User].UserId
+                        AND[User].FamilyId = (select FamilyId FROM[User] where UserId = @UserId)
+                        AND Chore.ChoreCompleted = 'true'
+                        AND Chore.ChoreApproved = 'false';";
+            using (var db = new SqlConnection(connectionString))
+            {
+                var parameters = new { UserId = userId };
+                var result = db.Query<Chore>(sql, parameters);
+                return result;
+            }
+        }
+
+        public bool UpdateStatusOnChore(int choreId)
+        {
+            var sql = @"UPDATE[Chore]
+                        Set ChoreApproved = 'true'
+                        Where ChoreId = @ChoreId
+                        AND ChoreCompleted = 'true';
+                        ";
+            using (var db = new SqlConnection(connectionString))
+            {
+                var parameters = new { ChoreId = choreId };
+                var result = db.Execute(sql, parameters);
+                return result > 0;
+            }
+        }
+        
     }
 }
