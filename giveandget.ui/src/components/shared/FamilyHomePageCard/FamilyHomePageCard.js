@@ -23,6 +23,7 @@ class FamilyHomepageCard extends React.Component {
               <Button>Family</Button>
               <Button><Link to={`/newChore`}>Chores</Link></Button>
               <Button><Link to={`/newReward`}>Rewards</Link></Button>
+              <Button><Link to={`/pendingapprovals`}>ApprvalQueue</Link></Button>
             </ButtonGroup>
           </CardBody>
         </Card>

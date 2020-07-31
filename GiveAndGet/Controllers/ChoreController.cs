@@ -15,10 +15,12 @@ namespace GiveAndGet.Controllers
     public class ChoreController : ControllerBase
     {
         ChoreRepo _choreRepository;
+        UserRepo _userRepository;
 
-        public ChoreController(ChoreRepo repository)
+        public ChoreController(ChoreRepo repository, UserRepo userRepository)
         {
             _choreRepository = repository;
+            _userRepository = userRepository;
         }
 
         //api/Chore/
@@ -100,6 +102,38 @@ namespace GiveAndGet.Controllers
                 return Ok(completedChoreByUser);
             }
             else return NotFound("That User does not have any chores.");
+        }
+
+        // api/Chore/familypendingapproval/2
+        [HttpGet("familypendingapproval/{userId}")]
+        public IActionResult GetAllPendingChoresByFamily(int userId)
+        {
+            var familiesPendingChores = _choreRepository.GetAllFamiliesPendingChores(userId);
+            if (familiesPendingChores != null)
+            {
+                return Ok(familiesPendingChores);
+            }
+            else return NotFound("That family does not have pending chores");
+        }
+
+        // api/Chore/approved/2/chorerewardpoint/12/user/2
+        [HttpPut("approved/{choreId}/chorerewardpoint/{choreRewardPoint}/user/{userId}")]
+        public IActionResult ApprovedChore(int choreId, int choreRewardPoint, int userId)
+        {
+            var choreExist = _choreRepository.GetChoreById(choreId);
+            if (choreExist != null)
+            {
+                var choreToBeApproved = _choreRepository.UpdateStatusOnChore(choreId);
+                if (choreToBeApproved != false)
+                {
+                    var addRewardPoints = _userRepository.UpdateChorePointsOnUserId(userId, choreRewardPoint);
+                    if (addRewardPoints != false) return Ok(addRewardPoints);
+                    
+                    return NotFound("Unable to add user chore points");
+                }
+                else return NotFound("Unable to make chore Approved");
+            }
+            else return NotFound("Unable to locate chore Id");
         }
     }
 }

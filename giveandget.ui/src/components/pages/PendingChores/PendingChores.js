@@ -8,14 +8,6 @@ class PendingChores extends React.Component {
     pendingChores: [],
   }
 
-  // getAllPending = () => {
-  //   const userId = sessionStorage.getItem('userId');
-  //   debugger
-  //   choreData.getAllChoresByUserId(Number(userId))
-  //     .then((response) => this.setState({ pendingChores: response }))
-  //     .catch((err) => console.error('error in get pendingChore', err));
-  // }
-
   componentDidMount() {
     const userId = sessionStorage.getItem('userId');
     choreData.getAllChoresByUserId(Number(userId))

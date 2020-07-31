@@ -15,6 +15,6 @@ namespace GiveAndGet.Models
         public bool ChoreCompleted { get; set; }
         public string ChoreDescription { get; set; }
         public bool ChoreApproved { get; set; }
-        public int UserId { get; set; }
+        public int userId { get; set; }
     }
 }
