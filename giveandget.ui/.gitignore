@@ -24,3 +24,8 @@ yarn-error.log*
 src/helpers/apiKeys.json 
 GiveAndGet/obj/Release/
 GiveAndGet/obj/Debug
+
+constants.js
+apiKeys.json
+src/helpers/data/auth.js
+src/helpers/data/constants.js

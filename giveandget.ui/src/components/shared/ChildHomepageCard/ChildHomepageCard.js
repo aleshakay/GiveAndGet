@@ -19,7 +19,7 @@ class ChildHomepageCard extends React.Component {
           <CardBody>
             <Button><Link to={`/chores`}>Chores</Link></Button>
             <Button><Link to={`/pendingChores`}>PendingChores</Link></Button>
-            <Button>Rewards</Button>
+            <Button><Link to={`/myrewards`}>Rewards</Link></Button>
           </CardBody>
         </Card>
 

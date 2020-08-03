@@ -37,5 +37,28 @@ namespace GiveAndGet.DataAccess
                 return db.Query<Reward>("select * from reward").ToList();
             }
         }
+
+        public List<Reward> GetAllAvailableRewards()
+        {
+            using (var db = new SqlConnection(connectionString))
+            {
+                return db.Query<Reward>("select * from reward where rewardAvailable = 'true'").ToList();
+            }
+        }
+
+        public bool UpdateReward(int rewardId, int userId)
+        {
+            var sql = @"
+                    UPDATE [Reward]
+                    SET UserId = @userId, RewardAvailable = 'false'
+                    Where RewardId = @rewardId";
+
+           using(var db = new SqlConnection(connectionString))
+           {
+                var parameters = new { userId = userId , rewardId = rewardId };
+                var result = db.Execute(sql, parameters);
+                return result > 0;
+           }
+        }
     }
 }

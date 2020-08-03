@@ -42,5 +42,22 @@ namespace GiveAndGet.Controllers
             }
             else return NotFound("That User does not have any chores.");
         }
+
+        //api/User
+        [HttpPost]
+        public IActionResult CreateNewUser(User userToAdd)
+        {
+            var newUser = _userRepository.Add(userToAdd);
+            return Created("", newUser);
+        }
+
+        //api/User/Roles
+        [HttpGet("Roles")]
+        public IActionResult GetAllRoles()
+        {
+            var allRoles = _userRepository.GetAllRoles();
+            if (allRoles != null) return Ok(allRoles);
+            return NotFound("There are not any roles");
+        }
     }
 }

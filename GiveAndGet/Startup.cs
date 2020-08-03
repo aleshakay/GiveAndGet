@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using GiveAndGet.DataAccess;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -11,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 
 namespace GiveAndGet
 {
@@ -32,6 +34,23 @@ namespace GiveAndGet
                 options.AddPolicy("ItsAllGood",
                     builder => builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin())
                 );
+                var authSettings = Configuration.GetSection("AuthenticationSettings");
+
+                services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                     .AddJwtBearer(options =>
+                         {
+                            options.IncludeErrorDetails = true;
+                            options.Authority = authSettings["Authority"];
+                            options.TokenValidationParameters = new TokenValidationParameters
+                            {
+                                ValidateIssuer = true,
+                                ValidIssuer = authSettings["Issuer"],
+                                ValidateAudience = true,
+                                ValidAudience = authSettings["Audience"],
+                                ValidateLifetime = true
+                            };
+                        }
+                    );
 
             //service registration
             services.AddTransient<UserRepo>(); // create new instance every time
@@ -47,6 +66,8 @@ namespace GiveAndGet
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseAuthentication();
 
             app.UseHttpsRedirection();
 

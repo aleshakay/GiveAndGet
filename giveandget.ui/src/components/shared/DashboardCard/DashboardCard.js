@@ -5,7 +5,6 @@ import userData from '../../../helpers/data/userData';
 import choreData from '../../../helpers/data/choreData';
 import CompletedChoreButtons from '../CompletedChoreButtons/CompletedChoreButtons';
 import './DashboardCard.scss'
-import AllAvailableChoreButtons from '../AllAvailableChoreButtons/AllAvailableChoreButtons';
 
 
 class DashboardCard extends React.Component {

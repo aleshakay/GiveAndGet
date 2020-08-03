@@ -14,9 +14,11 @@ namespace GiveAndGet.Controllers
     public class RewardController : ControllerBase
     {
         RewardRepo _rewardRepository;
-        public RewardController(RewardRepo repository)
+        UserRepo _userRepository;
+        public RewardController(RewardRepo repository, UserRepo userRepository)
         {
             _rewardRepository = repository;
+            _userRepository = userRepository;
         }
 
         // api/Reward/createReward
@@ -34,6 +36,28 @@ namespace GiveAndGet.Controllers
             var allRewards = _rewardRepository.GetAllRewards();
             if (allRewards != null) return Ok(allRewards);
             return NotFound("There are not any rewards");
+        }
+
+        // api/Reward/available
+        [HttpGet("available")]
+        public IActionResult GetAllAvailableRewards()
+        {
+            var allAvailableRewards = _rewardRepository.GetAllAvailableRewards();
+            if (allAvailableRewards != null) return Ok(allAvailableRewards);
+            return NotFound("There are not any available rewards");
+        }
+
+        // api/Reward/3/user/7
+        [HttpPut("{rewardId}/user/{userId}")]
+        public IActionResult UpdateReward(int rewardId, int userId)
+        {
+            var updatedReward = _rewardRepository.UpdateReward(rewardId, userId);
+            if (updatedReward == true)
+            {
+                var updatePointsOnUserProfile = _userRepository.UpdateUserPoints(userId, rewardId);
+                return Ok( updatePointsOnUserProfile);
+            }
+            else return NotFound("Unable to update reward.");
         }
     }
 }

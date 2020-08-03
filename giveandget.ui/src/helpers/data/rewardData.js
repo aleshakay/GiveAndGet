@@ -13,10 +13,23 @@ const getAllRewards = () => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
+const getAllAvailableRewards = () => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/Reward/available`)
+    .then((result) => {
+      const allavailableReward = result.data;
+      resolve(allavailableReward);
+    })
+    .catch((err) => reject(err));
+});
+
 const addReward = (rewardObj) => axios.post(`${baseUrl}/Reward`, rewardObj);
+
+const UpdateRewards = (userId, rewardId) => axios.put(`${baseUrl}/Reward/${rewardId}/user/${userId}`)
 
 
 export default {
   addReward,
-  getAllRewards
+  getAllRewards,
+  UpdateRewards,
+  getAllAvailableRewards
 };
