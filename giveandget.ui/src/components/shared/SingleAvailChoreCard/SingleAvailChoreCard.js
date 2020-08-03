@@ -2,11 +2,9 @@ import React from 'react';
 
 import {
   Card, 
-  CardBody,
   Button,
   CardTitle,
   CardText,
-  CardImg,
 } from 'reactstrap';
 import { withRouter } from 'react-router';
 

@@ -20,7 +20,7 @@ class FamilyHomepageCard extends React.Component {
           <CardTitle>Welcome {user.firstName}</CardTitle>
           <CardBody>
             <ButtonGroup vertical className="familyHomeButtons" >
-              <Button>Family</Button>
+              <Button><Link to={`/newUser`}>Family</Link></Button>
               <Button><Link to={`/newChore`}>Chores</Link></Button>
               <Button><Link to={`/newReward`}>Rewards</Link></Button>
               <Button><Link to={`/pendingapprovals`}>ApprvalQueue</Link></Button>

@@ -2,11 +2,9 @@ import React from 'react';
 
 import {
   Card, 
-  CardBody,
   Button,
   CardTitle,
-  CardText,
-  CardImg,
+  CardText
 } from 'reactstrap';
 import choreData from '../../../helpers/data/choreData';
 import { withRouter } from 'react-router';

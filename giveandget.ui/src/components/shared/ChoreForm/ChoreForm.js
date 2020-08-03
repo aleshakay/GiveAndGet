@@ -28,7 +28,6 @@ class ChoreForm extends React.Component {
     */
     const stateToChange = {};
     stateToChange[e.target.id] = e.target.value;
-
     this.setState(stateToChange);
   }
 
@@ -63,7 +62,6 @@ class ChoreForm extends React.Component {
               className='choreName' 
               id='name' 
               placeholder=""
-
               onChange={this.handleFieldChange}
               />
             </FormGroup>
@@ -76,7 +74,6 @@ class ChoreForm extends React.Component {
               className="choreDescription"
               id="choreDescription"
               placeholder=""
-              
               onChange={this.handleFieldChange}
               />
             </FormGroup>
@@ -89,7 +86,6 @@ class ChoreForm extends React.Component {
           className="chorePicture"
           id="picture"
           placeholder="https://animals.com"
-
           onChange={this.handleFieldChange} 
           />
         </FormGroup>
@@ -100,7 +96,6 @@ class ChoreForm extends React.Component {
            className="choreValue" 
            id="choreValue" 
            placeholder="2"
-
            onChange={this.handleFieldChange}
            />
         </FormGroup>

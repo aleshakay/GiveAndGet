@@ -4,14 +4,12 @@ import {
   Card, 
   Button,
   CardTitle,
-  CardText,
-  CardImg,
+  CardText
 } from 'reactstrap';
 import choreData from '../../../helpers/data/choreData';
 import { withRouter } from 'react-router';
 import './AwardAndApprovalCard.scss';
-import userData from '../../../helpers/data/userData';
-import PendingChoreCard from '../PendingChoreCard/PendingChoreCard';
+
 
 class AwardAndApprovalCard extends React.Component {
   state = {

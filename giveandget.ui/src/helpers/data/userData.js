@@ -19,7 +19,20 @@ const getAllCCNamesPerFamily = (userId) => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
+const getallRoles = () => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/User/Roles`)
+    .then((result) => {
+      const allRoles = result.data;
+      resolve(allRoles);
+    })
+    .catch((err) => reject(err));
+});
+
+const addUser = (userObj) => axios.post(`${baseUrl}/User`, userObj);
+
 export default {
   getUserById,
-  getAllCCNamesPerFamily
+  getAllCCNamesPerFamily,
+  addUser,
+  getallRoles
 };

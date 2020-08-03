@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using GiveAndGet.DataAccess;
 using GiveAndGet.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -12,6 +13,7 @@ namespace GiveAndGet.Controllers
 {
     [Route("api/Chore")]
     [ApiController]
+    // [Authorize]
     public class ChoreController : ControllerBase
     {
         ChoreRepo _choreRepository;

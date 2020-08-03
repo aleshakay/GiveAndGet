@@ -1,5 +1,4 @@
 import React from 'react';
-import { Table } from 'reactstrap';
 
 class AllRewardsTable extends React.Component {
   render() {
