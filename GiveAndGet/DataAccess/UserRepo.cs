@@ -86,7 +86,6 @@ namespace GiveAndGet.DataAccess
                 return db.Query<Role>("select * from role").ToList();
             }
         }
-
         public User UpdateUserPoints(int userId, int rewardId)
         {
             var sql = @"  UPDATE [User]

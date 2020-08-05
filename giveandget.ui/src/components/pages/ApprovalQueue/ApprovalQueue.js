@@ -2,6 +2,7 @@ import React from 'react';
 import choreData from '../../../helpers/data/choreData';
 import ApprovalChoreButtons from '../../shared/ApprovalChoreButtons/ApprovalChoreButtons';
 import ApprovalCircles from '../../shared/ApprovalCircles/ApprovalCircles';
+import './ApprovalQueue.scss';
 
 class ApprovalQueue extends React.Component {
   state = {

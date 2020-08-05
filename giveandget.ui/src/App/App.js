@@ -22,10 +22,13 @@ import ApprovalQueue from '../components/pages/ApprovalQueue/ApprovalQueue';
 import AwardAndApproval from '../components/pages/AwardAndApproval/AwardAndApproval';
 import Auth from '../components/pages/Auth/Auth';
 import Register from '../components/pages/Register/Register';
-import fbConnection from '../helpers/data/connection';
-import './App.scss';
+import Header from '../components/shared/Header/Header';
 import NewFamilyMember from '../components/pages/NewFamilyMember/NewFamilyMember';
 import UserReward from '../components/pages/UserRewards/UserRewards';
+import fbConnection from '../helpers/data/connection';
+
+import './App.scss';
+
 fbConnection();
 const PublicRoute = ({ component: Component, authed, ...rest }) => {
   const routeChecker = (props) => (authed === false ? <Component {...props} {...rest}/> : <Redirect to={{ pathname: '/', state: { from: props.location } }} />);
@@ -56,8 +59,9 @@ class App extends React.Component {
     const { authed } = this.state;
     return (
       <div className="App">
+        <Header />
         <Router>
-          <NavBar authed={authed}/>
+          <NavBar authed={authed} />
           <Switch>
             <PublicRoute path="/" exact component={HomePage} authed={authed} />
             {/* <PublicRoute path="/auth" exact component={Auth} authed={authed} /> */}
@@ -74,8 +78,7 @@ class App extends React.Component {
             <PublicRoute path="/dashboard" exact component={Dashboard} authed={authed} />
             <PublicRoute path="/allcompleted/:allCompletedChoreId" exact component={CompletedChoreButtons} authed={authed} />
             <PublicRoute path="/myrewards"  exact component={UserReward} authed={authed} />
-            {/* <PublicRoute path="/reward/rewardId"  exact component={AllReward} authed={authed} /> */}
-
+            {/* <PublicRoute path="/reward/:rewardId"  exact component={AllReward} authed={authed} /> */}
           </Switch>
         </Router>
       </div>

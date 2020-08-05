@@ -55,7 +55,7 @@ class HomePage extends React.Component {
   render() {
     const { user } = this.state;
     return (
-      <div>
+      <div className = "Homepage">
        <h1>HomePage</h1>
         {this.renderProfileByRole(user)}
       </div>

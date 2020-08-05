@@ -22,7 +22,7 @@ class SingleAvailChore extends React.Component {
   render() {
     const { singleChore } = this.state;
     return (
-      <div>
+      <div className="SingleAvailChoreCard">
        <SingleAvailChoreCard singleChore={singleChore} />
       </div>
     );

@@ -13,7 +13,7 @@ class ChoreForm extends React.Component {
   state = {
     name: '',
     enteredDate: '',
-    picture: '',
+    picture: 'test',
     choreValue: '',
     choreCompleted: false,
     choreDescription: '',
@@ -79,7 +79,7 @@ class ChoreForm extends React.Component {
             </FormGroup>
           </Col>
         </Row>
-        <FormGroup>
+        {/* <FormGroup>
           <Label for="chorePicture">Picture for Chore</Label>
           <Input 
           type="text" 
@@ -88,7 +88,7 @@ class ChoreForm extends React.Component {
           placeholder="https://animals.com"
           onChange={this.handleFieldChange} 
           />
-        </FormGroup>
+        </FormGroup> */}
         <FormGroup>
           <Label for="choreValue">Chore Value</Label>
           <Input

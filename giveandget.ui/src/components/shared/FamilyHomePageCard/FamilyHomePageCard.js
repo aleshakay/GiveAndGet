@@ -17,13 +17,13 @@ class FamilyHomepageCard extends React.Component {
     return (
       <div className="familyHomepageCard">
         <Card>
-          <CardTitle>Welcome {user.firstName}</CardTitle>
+          <CardTitle className="FamilyHomePageTitle">Welcome {user.firstName}</CardTitle>
           <CardBody>
-            <ButtonGroup vertical className="familyHomeButtons" >
-              <Button><Link to={`/newUser`}>Family</Link></Button>
-              <Button><Link to={`/newChore`}>Chores</Link></Button>
-              <Button><Link to={`/newReward`}>Rewards</Link></Button>
-              <Button><Link to={`/pendingapprovals`}>ApprvalQueue</Link></Button>
+            <ButtonGroup vertical className="familyHomeBtnGroup" >
+              <Button className='FamilyHomeButtons'  md={{ size: 6, offset: 3 }}><Link to={`/newUser`}>Family</Link></Button>
+              <Button className='FamilyHomeButtons'  md={{ size: 6, offset: 3 }}><Link to={`/newChore`}>Chores</Link></Button>
+              <Button className='FamilyHomeButtons'  md={{ size: 6, offset: 3 }}><Link to={`/newReward`}>Rewards</Link></Button>
+              <Button className='FamilyHomeButtons'  md={{ size: 6, offset: 3 }}><Link to={`/pendingapprovals`}>Approvals</Link></Button>
             </ButtonGroup>
           </CardBody>
         </Card>

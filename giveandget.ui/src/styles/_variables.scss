@@ -1,2 +1,15 @@
 
-$base-color: #c6538c;
+// @import url('https://fonts.googleapis.com/css2?family=Chilanka&display=swap');
+
+$base-color: #8F00FF;
+
+$font-stack: 'Chilanka', cursive;
+$font-sizexlg: x-large;
+$primary-color: #EAEB21;
+$button1-color: #FF006D;
+$card-color: #ADFF02;
+
+body {
+  font: 100%  $font-stack ;
+  color:  $base-color;
+}

@@ -1,6 +1,9 @@
+@import '../styles/variables';
+
 .App {
   text-align: center;
-  background-color: #c0c0c0;
+  background-color: $base-color;
+  font: 100%  $font-stack $primary-color;
 }
 
 .App-logo {
@@ -24,7 +27,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: $base-color;
 }
 
 @keyframes App-logo-spin {

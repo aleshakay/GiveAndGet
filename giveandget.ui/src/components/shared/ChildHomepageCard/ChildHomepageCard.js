@@ -4,6 +4,7 @@ import {
   CardBody,
   Button,
   CardTitle,
+  Col
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import './ChildHomepageCard.scss';
@@ -14,15 +15,14 @@ class ChildHomepageCard extends React.Component {
     const { user } = this.props;
     return (
       <div className="ChildHomepageCard">
-        <Card>
-          <CardTitle>Welcome {user.firstName}</CardTitle>
-          <CardBody>
-            <Button><Link to={`/chores`}>Chores</Link></Button>
-            <Button><Link to={`/pendingChores`}>PendingChores</Link></Button>
-            <Button><Link to={`/myrewards`}>Rewards</Link></Button>
+        <Card >
+          <CardTitle className="ChildHomepageCardSection">Welcome {user.firstName}</CardTitle>
+          <CardBody className="ChildHPBody">
+            <Col><Button className="ChildHPBtn" md={{ size: 6, offset: 3 }}><Link to={`/chores`}>Chores</Link></Button></Col>
+            <Button className="ChildHPBtn"><Link to={`/pendingChores`}>PendingChores</Link></Button>
+            <Col><Button className="ChildHPBtn"><Link to={`/myrewards`}>Rewards</Link></Button></Col>
           </CardBody>
         </Card>
-
       </div>
     );
   }

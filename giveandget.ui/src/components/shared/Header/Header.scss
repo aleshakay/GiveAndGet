@@ -1,6 +1,7 @@
 @import '../../../styles/variables';
 
-.ChildHomePage{
+.Header{
   background-color: $primary-color;
-  font: $font-stack;
+  padding: 5px;
+  font: x-large $font-stack; 
 }

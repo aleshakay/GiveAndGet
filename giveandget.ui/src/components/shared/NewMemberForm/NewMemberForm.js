@@ -8,6 +8,7 @@ import {
   FormGroup,
   Label,
 } from 'reactstrap';
+import { withRouter } from 'react-router';
 import userData from '../../../helpers/data/userData';
 import './NewMemberForm.scss';
 
@@ -48,7 +49,6 @@ class NewMemberForm extends React.Component {
 
   saveMemberForm = (e) => {
     e.preventDefault();
-    debugger
     const userObj =  {
       firstName: this.state.firstName,
       lastName: this.state.lastName,
@@ -146,4 +146,4 @@ class NewMemberForm extends React.Component {
   }
 }
 
-export default NewMemberForm;
+export default withRouter (NewMemberForm);

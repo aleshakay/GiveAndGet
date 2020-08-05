@@ -12,7 +12,7 @@ class FamilyHomePage extends React.Component {
   render() {
     const { user } = this.props;
     return (
-      <div>
+      <div className="FamilyHomePage"> 
         <FamilyHomePageCard user= {user}/>
       </div>
     );

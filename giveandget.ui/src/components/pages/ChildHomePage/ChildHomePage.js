@@ -15,7 +15,7 @@ class ChildHomePage extends React.Component {
   render() {
     const { user } = this.props;
     return (
-      <div>
+      <div className="ChildHomePage">
         <ChildHomepageCard user= {user}/>
       </div>
     );

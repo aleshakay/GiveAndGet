@@ -17,7 +17,7 @@ class PendingChores extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="PendingChores">
         <h1>Pending Chores</h1>
         {this.state.pendingChores.map((pendingChore) => (<PendingChoreButtons key={pendingChore.choreId} pendingChore={pendingChore} />))}
       </div>

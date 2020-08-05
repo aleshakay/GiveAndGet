@@ -23,7 +23,7 @@ class AvailableChores extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="AllChores">
         <h1>All Chores</h1>
         {this.state.chores.map((chore) => (<AllAvailableChoreButtons key={chore.choreId} chore={chore} />))}
       </div>

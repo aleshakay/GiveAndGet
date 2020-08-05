@@ -2,6 +2,7 @@ import React from 'react';
 import { Table } from 'reactstrap';
 import AllRewardsTable from '../../shared/AllRewardsTable/AllRewardsTable';
 import rewardData from '../../../helpers/data/rewardData';
+import './AllRewards.scss';
 
 class AllRewards extends React.Component {
   state = {

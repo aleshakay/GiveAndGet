@@ -1,10 +1,9 @@
 import React from 'react';
-import Reward from '../../../helpers/data/rewardData';
-import ApprovalChoreButtons from '../../shared/ApprovalChoreButtons/ApprovalChoreButtons';
 import userData from '../../../helpers/data/userData';
 import UserRewardsCircle from '../../shared/UserRewardsCircle/UserRewardsCircle';
 import rewardData from '../../../helpers/data/rewardData';
 import RewardButtons from '../../shared/RewardButtons/RewardButtons';
+import './UserRewards.scss';
 
 class UserReward extends React.Component {
   state = {
@@ -31,6 +30,7 @@ class UserReward extends React.Component {
       rewardData.UpdateRewards(userId, rewardId)
         .then((response) => this.setState({ rewardsAddedToUser: response }))
         .catch((err) => console.error(err))
+        .then(()=> this.props.history.push('/'))
     }
 
     onSelect = (id) => {
@@ -41,12 +41,13 @@ class UserReward extends React.Component {
     componentDidMount(){
       this.getAllUserPoints();
       this.getAllAvailRewards();
-      this.cashInPoints();
+      //this.cashInPoints();
     }
 
   render() {
     const { userRewardInfo, potentialRewards } = this.state;
     const totalUserPoints = userRewardInfo.choreRewardPoint;
+    console.log(this.state.potentialRewards)
     return (
       <div className="UserRewards">
         <h1>Reward Points</h1>
