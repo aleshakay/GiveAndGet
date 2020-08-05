@@ -1,0 +1,23 @@
+@import '../../../styles/variables';
+
+.ChoreForm{
+  background-color: $card-color;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  .ChoreFormGrp{
+    margin-top: 10px;
+  }
+}
+
+Label{
+  margin-top: 10px ;
+  text-align: left;
+  text-transform: capitalize
+}
+.ChoreFormBtn{
+  background-color: $button1-color;
+  font: floralwhite;
+  border-radius: 8px;
+  padding: 16px 16px;
+  margin-bottom: 9px;
+}

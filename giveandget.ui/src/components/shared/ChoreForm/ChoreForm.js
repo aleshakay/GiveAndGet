@@ -1,13 +1,11 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-
 import {
   Col, Button, Form, FormGroup, Label, Row, Input,
 } from 'reactstrap';
-
-import './ChoreForm.scss';
 import choreData from '../../../helpers/data/choreData';
 import { getCurrentDate } from '../../../helpers/utils';
+import './ChoreForm.scss';
 
 class ChoreForm extends React.Component {
   state = {
@@ -51,11 +49,11 @@ class ChoreForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <Form>
-        <Row form>
+      <div alignItems="center" fullHeight className="ChoreForm">
+        <Form className="ChoreForm">
+        <Row fullHeight form>
           <Col md={6}>
-            <FormGroup>
+            <FormGroup className="ChoreFormGrp">
               <Label for='choreName'>Name of Chore</Label>
               <Input 
               type="text" 
@@ -67,7 +65,7 @@ class ChoreForm extends React.Component {
             </FormGroup>
           </Col>
           <Col md={6}>
-            <FormGroup>
+            <FormGroup className="ChoreFormGrp">
               <Label for="choreDescription">Description of Chore</Label>
               <Input 
               type="text" 
@@ -78,29 +76,22 @@ class ChoreForm extends React.Component {
               />
             </FormGroup>
           </Col>
-        </Row>
-        {/* <FormGroup>
-          <Label for="chorePicture">Picture for Chore</Label>
-          <Input 
-          type="text" 
-          className="chorePicture"
-          id="picture"
-          placeholder="https://animals.com"
-          onChange={this.handleFieldChange} 
-          />
-        </FormGroup> */}
-        <FormGroup>
-          <Label for="choreValue">Chore Value</Label>
-          <Input
-           type="text" 
-           className="choreValue" 
-           id="choreValue" 
-           placeholder="2"
-           onChange={this.handleFieldChange}
-           />
-        </FormGroup>
-        <Button onClick={this.saveChoreForm}>Submit Chore</Button>
-      </Form> 
+          <Col md={6}>
+            <FormGroup className="ChoreFormGrp">
+              <Label for="choreValue">Chore Value</Label>
+              <Input
+              type="text" 
+              className="choreValue" 
+              id="choreValue" 
+              placeholder="2"
+              onChange={this.handleFieldChange}
+              />
+            </FormGroup> 
+            <Button  className="ChoreFormGrp ChoreFormBtn" onClick={this.saveChoreForm}>Submit Chore</Button>
+          </Col>  
+        </Row> 
+      </Form>
+      
       </div>
     );
   }

@@ -13,7 +13,7 @@ class NewChore extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="NewChore">
         <ChoreForm />
       </div>
     );
