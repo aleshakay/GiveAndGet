@@ -1,0 +1,21 @@
+@import '../../../styles/variables';
+
+
+.NewMemberForm{
+  font: $font-avg $font-stack;
+  background-color: $card-color !important;
+  text-align: center;
+  border-radius: 8px;
+  Button{
+    background-color: $button1-color;
+    font-size: $font-avg;
+    border-radius: 8px;
+    padding: 10px 10px;
+    margin-bottom: 9px;
+    width: 150px;
+  }
+}
+
+Label{
+  color: $button1-color;
+}

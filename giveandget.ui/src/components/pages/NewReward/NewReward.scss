@@ -1,0 +1,15 @@
+@import '../../../styles/variables';
+
+.NewReward{
+  background-color: $card-color;
+  font: $font-avg $font-stack;
+}
+  
+.NewRewardTitle{
+  color : $button1-color;
+  padding: 16px;
+  font:  $font-stack;
+  font-size: $font-lg;
+  border-bottom: 4mm ridge $base-color;
+  border-radius: 10px;
+}

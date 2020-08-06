@@ -1,12 +1,14 @@
+@import '../../../styles/variables';
+
 .button {
-  background-color: #af4c8e;
+  background-color: $button1-color;
   border: none;
   color: white;
   padding: 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: $font-lg;
   margin: 4px 2px;
 }
 

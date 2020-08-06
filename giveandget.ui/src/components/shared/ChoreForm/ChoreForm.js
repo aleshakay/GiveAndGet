@@ -49,9 +49,9 @@ class ChoreForm extends React.Component {
 
   render() {
     return (
-      <div alignItems="center" fullHeight className="ChoreForm">
+      <div className="ChoreForm">
         <Form className="ChoreForm">
-        <Row fullHeight form>
+        <Row form>
           <Col md={6}>
             <FormGroup className="ChoreFormGrp">
               <Label for='choreName'>Name of Chore</Label>

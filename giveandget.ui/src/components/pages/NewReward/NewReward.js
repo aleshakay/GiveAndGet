@@ -6,14 +6,13 @@ import './NewReward.scss';
 
 class NewReward extends React.Component {
   static propTypes = {
-    userId: PropTypes.number,
+    userId: PropTypes.number
   }
-
-
 
   render() {
     return (
-      <div>
+      <div className="NewReward">
+        <h1 className="NewRewardTitle">New Reward</h1>
         <NewRewardCard />
       </div>
     );

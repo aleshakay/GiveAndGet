@@ -2,5 +2,14 @@
 
 .NewChore{
   background-color: $card-color;
-  font: large $font-stack;
+  font: $font-avg $font-stack;
+}
+
+.ChoreNameTitle{
+  color : $button1-color;
+  padding: 16px;
+  font:  $font-stack;
+  font-size: $font-lg;
+  border-bottom: 4mm ridge $base-color;
+  border-radius: 10px;
 }

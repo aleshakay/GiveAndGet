@@ -66,8 +66,8 @@ class NewMemberForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <Form>
+      <div className="NewMemberForm">
+        <Form >
         <Row form>
           <Col md={6}>
             <FormGroup>

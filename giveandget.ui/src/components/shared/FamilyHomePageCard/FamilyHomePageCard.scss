@@ -1,19 +1,24 @@
 @import '../../../styles/variables';
 
 .familyHomepageCard{
-  font: $font-sizexlg  $font-stack;
+  font: $font-lg $font-stack;
   background-color: $card-color !important;
   text-align: center;
+  border-radius: 8px;
   .FamilyHomeButtons{
     background-color: $button1-color;
-    font-size: $font-sizexlg;
+    font-size: $font-lg;
     border-radius: 8px;
-    padding: 14px 14px;
+    padding: 10px 10px;
     margin-bottom: 9px;
-    width: 200px;
+    width: 150px;
   }
 }
 .FamilyHomePageTitle{
   color : $button1-color;
+  padding: 16px;
   font:  $font-stack;
+  font-size: $font-lg;
+  border-bottom: 4mm ridge $base-color;
+  border-radius: 10px;
 }

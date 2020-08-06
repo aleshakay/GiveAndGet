@@ -16,8 +16,9 @@ Label{
 }
 .ChoreFormBtn{
   background-color: $button1-color;
-  font: floralwhite;
+  font-size: $font-avg;
   border-radius: 8px;
-  padding: 16px 16px;
+  padding: 14px 14px;
   margin-bottom: 9px;
+  width: 150px;
 }

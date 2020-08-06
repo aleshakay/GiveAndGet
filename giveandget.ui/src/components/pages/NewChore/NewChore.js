@@ -14,6 +14,7 @@ class NewChore extends React.Component {
   render() {
     return (
       <div className="NewChore">
+        <h1 className="ChoreNameTitle">Add Chores</h1>
         <ChoreForm />
       </div>
     );
