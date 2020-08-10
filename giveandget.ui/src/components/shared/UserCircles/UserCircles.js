@@ -15,7 +15,7 @@ class UserCircles extends React.Component {
     const { allFamilyName } = this.props;
     return (
       <div>
-        <button id ={`${allFamilyName.userId}`} className= 'button button5' onClick={this.handleClick} >{allFamilyName.firstName}</button>
+        <button id ={`${allFamilyName.userId}`} className= 'button button5 UserCircles' onClick={this.handleClick} >{allFamilyName.firstName}</button>
       </div>
     );
   }

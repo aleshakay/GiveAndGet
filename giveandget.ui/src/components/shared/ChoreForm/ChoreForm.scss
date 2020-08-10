@@ -1,7 +1,7 @@
 @import '../../../styles/variables';
 
 .ChoreForm{
-  background-color: $card-color;
+  background-color: #b8cccc;
   padding-top: 15px;
   padding-bottom: 15px;
   .ChoreFormGrp{
@@ -15,10 +15,16 @@ Label{
   text-transform: capitalize
 }
 .ChoreFormBtn{
-  background-color: $button1-color;
+  background-color: $base-color;
   font-size: $font-avg;
   border-radius: 8px;
   padding: 14px 14px;
   margin-bottom: 9px;
   width: 150px;
+}
+
+.form-group::before,
+.form-group::after {
+   content: " ";
+   display: table;
 }

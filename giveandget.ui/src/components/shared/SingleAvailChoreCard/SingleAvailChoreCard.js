@@ -12,6 +12,7 @@ import { withRouter } from 'react-router';
 import choreData from '../../../helpers/data/choreData';
 
 import './SingleAvailChoreCard.scss';
+import userData from '../../../helpers/data/userData';
 
 class SingleAvailChoreCard extends React.Component {
   chooseChore = (e) => {
@@ -31,10 +32,10 @@ class SingleAvailChoreCard extends React.Component {
     const { singleChore } = this.props;
     const choreCompletedAndApproved = this.props.singleChore.choreApproved
     let checkCompleteAndApproved;
-    if (choreCompletedAndApproved === true) {
-      checkCompleteAndApproved = <Button onClick = {this.closeMe}> Close </Button> 
+    if (choreCompletedAndApproved === true && singleChore.userId == 1) {
+      checkCompleteAndApproved = <Button className="ButtonSingleAvail" onClick = {this.closeMe}> Close </Button> 
     } else {
-      checkCompleteAndApproved = <Button onClick={this.chooseChore}>Choose</Button>
+      checkCompleteAndApproved = <Button className="ButtonSingleAvail" onClick={this.chooseChore}>Choose</Button>
     }
     return (
       <div className="SingleAvailChoreCard">

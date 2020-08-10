@@ -1,0 +1,15 @@
+@import '../../../styles/variables';
+
+.SingleAvailChoreCard{
+  margin-top: 2em;
+  overflow: auto;
+  background-color: #b8cccc !important;
+  font: 100% $font-stack;
+  color: $fontColor;
+}
+
+.ButtonSingleAvail{
+  padding: 10px 10px;
+  overflow: auto;
+  border-radius: 8px;
+}

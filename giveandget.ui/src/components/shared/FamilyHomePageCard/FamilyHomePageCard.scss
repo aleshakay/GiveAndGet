@@ -2,7 +2,6 @@
 
 .familyHomepageCard{
   font: $font-lg $font-stack;
-  background-color: $card-color !important;
   text-align: center;
   border-radius: 8px;
   .FamilyHomeButtons{
@@ -15,10 +14,10 @@
   }
 }
 .FamilyHomePageTitle{
-  color : $button1-color;
+  color : $fontColor;
   padding: 16px;
   font:  $font-stack;
   font-size: $font-lg;
-  border-bottom: 4mm ridge $base-color;
-  border-radius: 10px;
+  // border-bottom: 4mm ridge $base-color;
+  // border-radius: 10px;
 }

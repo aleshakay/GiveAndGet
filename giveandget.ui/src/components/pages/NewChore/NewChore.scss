@@ -1,15 +1,23 @@
 @import '../../../styles/variables';
 
 .NewChore{
-  background-color: $card-color;
+  background-color: $base-color;
   font: $font-avg $font-stack;
+  color: $fontColor;
 }
 
 .ChoreNameTitle{
-  color : $button1-color;
+  color : $fontColor;
   padding: 16px;
   font:  $font-stack;
   font-size: $font-lg;
-  border-bottom: 4mm ridge $base-color;
-  border-radius: 10px;
+  // border-bottom: 4mm ridge $base-color;
+  // border-radius: 10px;
+}
+
+.form-group::before,
+.form-group::after {
+   content: " ";
+   display: table;
+   margin: 2px;
 }

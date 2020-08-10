@@ -9,7 +9,7 @@ class CompletedChoreButtons extends React.Component {
     const { allCompletedChore } = this.props;
     return (
       <div>
-        <Button><Link to ={`/chore/${allCompletedChore.choreId}`}>{allCompletedChore.name}</Link></Button>
+        <Button className="AllCompletedChoreBtn"><Link to ={`/chore/${allCompletedChore.choreId}`}>{allCompletedChore.name}</Link></Button>
       </div>
     );
   }

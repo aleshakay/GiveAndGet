@@ -7,7 +7,9 @@ class FamilyDashboard extends React.Component {
 
   render() {
     return (
-      <DashboardCard  />
+      <div className="Dashboard">
+        <DashboardCard  />
+      </div>
     );
   }
 }

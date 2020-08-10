@@ -1,0 +1,20 @@
+@import '../../../styles/variables';
+
+.AwardAndApprovalCard{
+  margin-top: 2em;
+  font: 100% $font-stack;
+  background-color: #b8cccc;
+  color: $fontColor;
+  .card-title{
+    Padding-top: 1em;
+  }
+}
+
+.ApprovalBtn{
+  background-color: $base-color;
+  font-size: $font-avg;
+  border-radius: 8px;
+  padding: 10px 10px;
+  margin-bottom: 9px;
+  width: 150px;
+}

@@ -1,3 +1,7 @@
+@import '../../../styles/variables';
+
 .AllRewards{
-  background-color: yellow;
+  background-color: $base-color;
+  color: $fontColor;
+  overflow: auto;
 }

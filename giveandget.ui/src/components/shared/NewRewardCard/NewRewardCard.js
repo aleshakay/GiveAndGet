@@ -97,7 +97,7 @@ class NewRewardCard extends React.Component {
            onChange={this.handleFieldChange}
            />
         </FormGroup>
-        <Button onClick={this.saveRewardCard}>Submit Reward</Button>
+        <Button className="RewardSubmit" onClick={this.saveRewardCard}>Submit Reward</Button>
       </Form> 
       </div>
     );

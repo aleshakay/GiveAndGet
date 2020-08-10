@@ -2,12 +2,14 @@
 
 
 .NewMemberForm{
+  margin-top: 2em;
+  padding-top: 5px;
   font: $font-avg $font-stack;
-  background-color: $card-color !important;
+  background-color: #b8cccc;
   text-align: center;
   border-radius: 8px;
   Button{
-    background-color: $button1-color;
+    background-color: $base-color;
     font-size: $font-avg;
     border-radius: 8px;
     padding: 10px 10px;
@@ -17,5 +19,12 @@
 }
 
 Label{
-  color: $button1-color;
+  color: $fontColor;
+}
+
+.form-group::before,
+.form-group::after {
+   content: " ";
+   display: table;
+   margin: 2px;
 }

@@ -1,0 +1,15 @@
+@import '../../../styles/variables';
+
+.Dashboard{
+  overflow: auto;
+  background-color: $base-color;
+  font: 100% $font-stack;
+  color: $fontColor;
+  margin-top: 2em;
+}
+
+.UserCircles{
+  padding: 10px 10px;
+  overflow: auto;
+  border-radius: 8px;
+}

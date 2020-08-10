@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './AllRewardsTable.scss';
+
 class AllRewardsTable extends React.Component {
   render() {
     const { reward } = this.props;

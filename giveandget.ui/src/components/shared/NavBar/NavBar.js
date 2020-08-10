@@ -19,12 +19,12 @@ class NavBar extends React.Component {
     return (
       <div className="MainContainer">
         <header>
-          <div className="navbar" id="myNavBar">
+          <div className="topnav" id="myTopnav">
             <a href="/">HomePage</a>
             <a href="/chores">Chores</a>
             <a href="/rewards">Rewards</a>
             <a href="/dashboard">Dashboard</a>
-            <button className="btn btn-danger" onClick={this.logMeOut}>Log Me Out</button>
+            {/* <button className="btn btn-danger" onClick={this.logMeOut}>Log Me Out</button> */}
           </div>
         </header>
       </div>

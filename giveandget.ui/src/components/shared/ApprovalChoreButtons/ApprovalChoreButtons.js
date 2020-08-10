@@ -9,7 +9,7 @@ class ApprovalChoreButtons extends React.Component {
     const { parentsPendingChore } = this.props;
     return (
       <div>
-        <Button><Link to ={`/approvedChore/${parentsPendingChore.choreId}`}>{parentsPendingChore.name}</Link></Button>
+        <Button className="ApprovalChoreBtn"><Link to ={`/approvedChore/${parentsPendingChore.choreId}`}>{parentsPendingChore.name}</Link></Button>
       </div>
     );
   }

@@ -1,0 +1,8 @@
+@import '../../../styles/variables';
+
+.allRewardsHeader{
+  overflow: auto;
+  background-color: $base-color;
+  font: 100% $font-stack;
+  color: $fontColor;
+}

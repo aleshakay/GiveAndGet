@@ -30,11 +30,10 @@ class AwardAndApprovalCard extends React.Component {
     return (
       <div className="AwardAndApprovalCard">
         <Card>
-          <CardTitle>{parentsPendingChore.name}</CardTitle>
-            <CardText>{parentsPendingChore.picture}</CardText>
-            <CardText>{parentsPendingChore.choreDescription}</CardText>
-            <CardText>{parentsPendingChore.choreValue}</CardText>
-            <Button onClick = {this.approveAndPoints}> Approval Chore</Button> 
+          <CardTitle>Chore Name: {parentsPendingChore.name}</CardTitle>
+            <CardText>Chore Description: {parentsPendingChore.choreDescription}</CardText>
+            <CardText>Chore Value: {parentsPendingChore.choreValue}</CardText>
+            <Button className="ApprovalBtn" onClick = {this.approveAndPoints}> Approval Chore</Button> 
         </Card>
       </div>
     );

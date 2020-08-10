@@ -1,15 +1,31 @@
 @import '../../../styles/variables';
 
 .NewReward{
-  background-color: $card-color;
+  background-color: $base-color;
   font: $font-avg $font-stack;
 }
   
 .NewRewardTitle{
-  color : $button1-color;
+  color : $fontColor;
   padding: 16px;
   font:  $font-stack;
   font-size: $font-lg;
-  border-bottom: 4mm ridge $base-color;
-  border-radius: 10px;
+  // border-bottom: 4mm ridge $base-color;
+  // border-radius: 10px;
+}
+
+.RewardSubmit{
+  background-color: $base-color;
+  font-size: $font-avg;
+  border-radius: 8px;
+  padding: 10px 10px;
+  margin-bottom: 9px;
+  width: 150px;
+}
+
+.form-group::before,
+.form-group::after {
+   content: " ";
+   display: table;
+   margin: 2px;
 }

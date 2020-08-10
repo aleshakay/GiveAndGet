@@ -1,41 +1,36 @@
-@import '../../../styles/variables';
-
-/* Place the navbar at the bottom of the page, and make it stick */
-.navbar {
-  background-color: $base-color;
+ @import '../../../styles/variables';
+ .topnav {
+  background-color:$base-color;
   overflow: hidden;
-  position: fixed;
-  bottom: 0;
-  width: 95%;
-  border-bottom: 4mm ridge $base-color;
-  border-radius: 10px;
-  padding-left: 2px;
+  border-style: outset;
+  border-color: yellow;
+  border-width: thick;
 }
 
 /* Style the links inside the navigation bar */
-.navbar a {
+.topnav a {
   float: left;
   display: block;
-  color: #f2f2f2;
+  color:  $fontColor;
   text-align: center;
-  padding: 14px 16px;
+  padding: 10px 10px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 16px;
 }
 
 /* Change the color of links on hover */
-.navbar a:hover {
-  background-color: #ddd;
+.topnav a:hover {
+  background-color:  $fontColor;
   color: black;
 }
 
-/* Add a green background color to the active link */
-.navbar a.active {
+/* Add an active class to highlight the current page */
+.topnav a.active {
   background-color: #4CAF50;
-  color: white;
+  color: $fontColor;
 }
 
-/* Hide the link that should open and close the navbar on small screens */
-.navbar .icon {
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
   display: none;
 }
